@@ -1,12 +1,11 @@
 import React from "react";
 import { StyleSheet, View } from "react-native";
+import { ContainerProps } from "../../interfaces/interfaces";
 
-interface ContainerProps {
-  children: React.ReactNode;
-  backgroundColor?: string;
-}
-
-export function Container({ children, backgroundColor }: ContainerProps) {
+export default function Container({
+  children,
+  backgroundColor,
+}: ContainerProps) {
   const styles = StyleSheet.create({
     container: {
       elevation: 5,

@@ -1,9 +1,8 @@
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { RootStackParamList } from "../interfaces/types";
 import MonkeyDirectory from "../screens/monkeyDirectory";
 import MonkeyProfile from "../screens/monkeyProfile";
-import { RootStackParamList } from "../interfaces/types";
-import Header from "../components/Header/Header";
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 

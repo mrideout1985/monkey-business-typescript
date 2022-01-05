@@ -1,24 +1,10 @@
 import React from "react";
-import {
-  View,
-  FlatList,
-  StyleSheet,
-  Text,
-  ScrollView,
-  SafeAreaView,
-  SectionList,
-} from "react-native";
+import { SafeAreaView, SectionList } from "react-native";
 import Header from "../components/Header/Header";
 import ProfileButton from "../components/ProfileButton/ProfileButton";
 import { useGetMonkeys } from "../hooks/useGetMonkeys";
-import { Monkey, MonkeyDirectoryProps } from "../interfaces/types";
-
-const monkeyDirectoryStyles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#be3144",
-  },
-});
+import { MonkeyDirectoryProps } from "../interfaces/types";
+import { monkeyDirectoryStyles } from "../styles/componentStyles";
 
 export default function MonkeyDirectory({
   navigation,
@@ -39,7 +25,7 @@ export default function MonkeyDirectory({
           justifyContent: "center",
           alignItems: "center",
         }}
-        renderSectionHeader={({ section: { title } }: any) => (
+        renderSectionHeader={({ section: { title } }) => (
           <Header title={title} color="#d3d6db" />
         )}
         renderItem={({ item }) => (
