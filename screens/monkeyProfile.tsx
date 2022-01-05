@@ -3,12 +3,13 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import { View, Text, Image } from "react-native";
 import { MonkeyPageProps } from "../interfaces/types";
 import { profileStyles } from "../styles/componentStyles";
+import { from } from "../assets/data/from";
 
 export default function MonkeyProfile({
   route,
   navigation,
 }: MonkeyPageProps<"MonkeyProfile">) {
-  const { name, age, bananas, img } = route.params;
+  const { id, name, age, bananas, img } = route.params;
   return (
     <View style={profileStyles.container}>
       <View style={profileStyles.image}>
@@ -34,9 +35,9 @@ export default function MonkeyProfile({
             {name}
             <Text style={profileStyles.age}>, {age} </Text>
           </Text>
-          {/* <Text style={profileStyles.from}>Born: {from[id - 1]}</Text> */}
           <Text style={profileStyles.bananas}>Bananas: {bananas} </Text>
         </View>
+        <Text style={profileStyles.from}>Born: {from[id - 1]}</Text>
       </View>
     </View>
   );

@@ -15,7 +15,7 @@ export default function Home({ navigation }: HomeProps<"Monkeys">) {
           view a list of monkeys along with their age and the number of bananas
           they have. When you click a Monkey it will then show their information
           in a profile style view along with a photo of the Monkey. Please click
-          the &quot;Monkeys&quot; tab to view our monkeys.
+          the &quot;Monkeys&quot; tab, or the icon below to view our monkeys.
         </Text>
         <TouchableOpacity
           style={homeStyles.monkey}
