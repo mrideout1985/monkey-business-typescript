@@ -1,28 +1,49 @@
-import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-
-export const headerStyles = StyleSheet.create({
-  header: {
-    width: '100%',
-    backgroundColor: '#2e2b2b',
-  },
-  title: {
-    fontSize: 40,
-    fontFamily: 'Poppins-Bold',
-    textAlign: 'center',
-    color: '#fdf6f6',
-    margin: 10,
-  },
-});
+import React from "react";
+import { View, Text, StyleSheet, Image } from "react-native";
 
 interface HeaderProps {
   title: string;
+  bgColor?: string;
+  fontSize?: number;
+  color?: string;
 }
 
-export default function Header({ title }: HeaderProps) {
+export default function Header({
+  title,
+  bgColor,
+  fontSize,
+  color,
+}: HeaderProps) {
+  const headerStyles = StyleSheet.create({
+    container: {
+      backgroundColor: `${bgColor || "transparent"}`,
+      flexDirection: "row",
+    },
+    titleContainer: {
+      width: "100%",
+      justifyContent: "center",
+      alignItems: "center",
+    },
+    title: {
+      fontFamily: "Poppins-Bold",
+      fontSize: fontSize || 32,
+      textAlign: "center",
+      color: color || "black",
+      padding: 10,
+    },
+    btn: {
+      position: "absolute",
+      top: 0,
+      backgroundColor: "red",
+    },
+  });
+
   return (
-    <View style={headerStyles.header}>
-      <Text style={headerStyles.title}>{title}</Text>
+    // eslint-disable-next-line react/jsx-no-duplicate-props
+    <View style={headerStyles.container}>
+      <View style={headerStyles.titleContainer}>
+        <Text style={headerStyles.title}>{title}</Text>
+      </View>
     </View>
   );
 }
