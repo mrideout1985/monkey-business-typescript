@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet, Image } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 
 interface HeaderProps {
   title: string;
@@ -39,7 +39,6 @@ export default function Header({
   });
 
   return (
-    // eslint-disable-next-line react/jsx-no-duplicate-props
     <View style={headerStyles.container}>
       <View style={headerStyles.titleContainer}>
         <Text style={headerStyles.title}>{title}</Text>

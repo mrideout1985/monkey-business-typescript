@@ -3,7 +3,7 @@ import React from "react";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Platform, StatusBar, View } from "react-native";
-import Home from "../screens/alternate-stack-screens/home";
+import Home from "../screens/home";
 import MonkeyStack from "./monkeyStack";
 
 type TabParamList = {
