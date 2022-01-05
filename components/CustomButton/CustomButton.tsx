@@ -1,11 +1,7 @@
 import React from "react";
 import { Text, TouchableOpacity, StyleSheet } from "react-native";
+import { CustomButtonProps } from "../../interfaces/interfaces";
 import { buttonStyles } from "../../styles/componentStyles";
-
-interface CustomButtonProps {
-  onPress?: () => void;
-  btnText: string;
-}
 
 export default function CustomButton({
   onPress,

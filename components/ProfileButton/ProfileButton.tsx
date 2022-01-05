@@ -1,12 +1,7 @@
 import React from "react";
 import { Image, View, Text, TouchableOpacity, StyleSheet } from "react-native";
+import { ProfileButtonProps } from "../../interfaces/interfaces";
 import { profileButtonStyles } from "../../styles/componentStyles";
-
-interface ProfileButtonProps {
-  onPress: () => void;
-  btnText: string;
-  image: string;
-}
 
 export default function ProfileButton({
   onPress,

@@ -1,5 +1,5 @@
 import React from "react";
-import { SafeAreaView, SectionList, StyleSheet } from "react-native";
+import { SafeAreaView, SectionList } from "react-native";
 import Header from "../components/Header/Header";
 import ProfileButton from "../components/ProfileButton/ProfileButton";
 import { useGetMonkeys } from "../hooks/useGetMonkeys";

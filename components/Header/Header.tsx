@@ -1,12 +1,6 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
-
-interface HeaderProps {
-  title: string;
-  bgColor?: string;
-  fontSize?: number;
-  color?: string;
-}
+import { HeaderProps } from "../../interfaces/interfaces";
 
 export default function Header({
   title,

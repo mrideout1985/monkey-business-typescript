@@ -1,6 +1,6 @@
 import React from "react";
-import { View, Text, Image } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
+import { View, Text, Image } from "react-native";
 import { MonkeyPageProps } from "../interfaces/types";
 import { profileStyles } from "../styles/componentStyles";
 

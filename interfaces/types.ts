@@ -26,11 +26,6 @@ export type MonkeyProfileParamList = {
   MonkeyDirectory: undefined;
 };
 
-export type MonkeyPageProps<T extends keyof MonkeyProfileParamList> = {
-  route: RouteProp<MonkeyProfileParamList, T>;
-  navigation: StackNavigationProp<MonkeyProfileParamList, T>;
-};
-
 export type MonkeyParamList = {
   MonkeyDirectory: undefined;
   MonkeyProfile: Monkey;
@@ -41,6 +36,12 @@ export type HomeParamList = {
   Monkeys: undefined;
 };
 
+export type TabParamList = {
+  Home: undefined;
+  Monkeys: undefined;
+  MonkeyProfile: undefined;
+};
+
 export type HomeProps<T extends keyof HomeParamList> = {
   navigation: StackNavigationProp<HomeParamList, T>;
   route: RouteProp<HomeParamList, T>;
@@ -49,4 +50,9 @@ export type HomeProps<T extends keyof HomeParamList> = {
 export type MonkeyDirectoryProps<T extends keyof MonkeyParamList> = {
   navigation: StackNavigationProp<MonkeyParamList, T>;
   route: RouteProp<MonkeyParamList, T>;
+};
+
+export type MonkeyPageProps<T extends keyof MonkeyProfileParamList> = {
+  route: RouteProp<MonkeyProfileParamList, T>;
+  navigation: StackNavigationProp<MonkeyProfileParamList, T>;
 };

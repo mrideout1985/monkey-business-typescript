@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, Image, TouchableOpacity } from "react-native";
-import { Container } from "../components/Container/Container";
+import Container from "../components/Container/Container";
 import Header from "../components/Header/Header";
 import { HomeProps } from "../interfaces/types";
 import { homeStyles } from "../styles/componentStyles";
