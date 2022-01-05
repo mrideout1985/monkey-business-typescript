@@ -7,17 +7,17 @@ import { View } from "react-native";
 import { TabStack } from "./routes/TabStack";
 
 export default function App() {
-  const [fontsLoaded] = useFonts({
-    "Poppins-Regular": require("./assets/fonts/Poppins-Regular.ttf"),
-    "Poppins-Bold": require("./assets/fonts/Poppins-Bold.ttf"),
-  });
+    const [fontsLoaded] = useFonts({
+        "Poppins-Regular": require("./assets/fonts/Poppins-Regular.ttf"),
+        "Poppins-Bold": require("./assets/fonts/Poppins-Bold.ttf"),
+    });
 
-  if (!fontsLoaded) {
-    return <AppLoading />;
-  }
-  return (
-    <NavigationContainer>
-      <TabStack />
-    </NavigationContainer>
-  );
+    if (!fontsLoaded) {
+        return <AppLoading />;
+    }
+    return (
+        <NavigationContainer>
+            <TabStack />
+        </NavigationContainer>
+    );
 }
