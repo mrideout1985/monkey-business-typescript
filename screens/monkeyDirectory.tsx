@@ -7,35 +7,37 @@ import { MonkeyDirectoryProps } from "../interfaces/types";
 import { monkeyDirectoryStyles } from "../styles/componentStyles";
 
 export default function MonkeyDirectory({
-  navigation,
+    navigation,
 }: MonkeyDirectoryProps<"MonkeyDirectory">) {
-  const result = useGetMonkeys();
-  const monkeyData = result?.monkeys ?? [];
-  const DATA = [
-    {
-      title: "Monkeys",
-      data: monkeyData,
-    },
-  ];
-  return (
-    <SafeAreaView style={monkeyDirectoryStyles.container}>
-      <SectionList
-        sections={DATA}
-        contentContainerStyle={{
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-        renderSectionHeader={({ section: { title } }) => (
-          <Header title={title} color="#d3d6db" />
-        )}
-        renderItem={({ item }) => (
-          <ProfileButton
-            onPress={() => navigation.navigate("MonkeyProfile", item)}
-            btnText={item.name}
-            image={item.img}
-          />
-        )}
-      />
-    </SafeAreaView>
-  );
+    const result = useGetMonkeys();
+    const monkeyData = result?.monkeys ?? [];
+    const data = [
+        {
+            title: "Monkeys",
+            data: monkeyData,
+        },
+    ];
+    return (
+        <SafeAreaView style={monkeyDirectoryStyles.container}>
+            <SectionList
+                sections={data}
+                contentContainerStyle={{
+                    justifyContent: "center",
+                    alignItems: "center",
+                }}
+                renderSectionHeader={({ section: { title } }) => (
+                    <Header title={title} color="#d3d6db" />
+                )}
+                renderItem={({ item }) => (
+                    <ProfileButton
+                        onPress={() =>
+                            navigation.navigate("MonkeyProfile", item)
+                        }
+                        btnText={item.name}
+                        image={item.img}
+                    />
+                )}
+            />
+        </SafeAreaView>
+    );
 }
