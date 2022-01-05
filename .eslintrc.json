@@ -36,7 +36,7 @@
         "prettier/prettier": [
             "error",
             {
-                "singleQuote": true,
+                "singleQuote": false,
                 "trailingComma": "all",
                 "endOfLine": "auto"
                 
@@ -51,6 +51,7 @@
             "never"
         ],
         "react/prop-types": 0,  
+        "global-require" : "off",
         "react/require-default-props": 0,      
         "no-shadow": "off",
         "func-names" : "off",
