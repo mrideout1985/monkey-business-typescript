@@ -2,6 +2,7 @@
 import React from "react";
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { RouteProp } from "@react-navigation/native";
 import { Platform, StatusBar, View } from "react-native";
 import Home from "../screens/Home";
 import MonkeyStack from "./MonkeyStack";
@@ -10,31 +11,33 @@ import { TabParamList } from "../interfaces/types";
 const Tabs = createBottomTabNavigator<TabParamList>();
 
 export function TabStack(): JSX.Element {
+    const isAndroid = Platform.OS === "android";
+    const iconName = (
+        focused: boolean,
+        route: RouteProp<TabParamList, keyof TabParamList>,
+    ) => {
+        if (route.name === "Home") {
+            return focused ? "ios-home" : "ios-home-outline";
+        }
+        if (route.name === "Monkeys") {
+            return focused ? "md-list-circle" : "md-list-circle-outline";
+        }
+
+        return undefined;
+    };
+
     return (
         <View style={{ flex: 1 }}>
-            {Platform.OS === "android" && <StatusBar barStyle="default" />}
+            {isAndroid && <StatusBar barStyle="default" />}
             <Tabs.Navigator
                 screenOptions={({ route }) => ({
-                    tabBarIcon: ({ focused }) => {
-                        let iconName;
-
-                        if (route.name === "Home") {
-                            iconName = focused
-                                ? "ios-home"
-                                : "ios-home-outline";
-                        } else if (route.name === "Monkeys") {
-                            iconName = focused
-                                ? "md-list-circle"
-                                : "md-list-circle-outline";
-                        }
-                        return (
-                            <Ionicons
-                                name={iconName as never}
-                                size={35}
-                                color="#be3144"
-                            />
-                        );
-                    },
+                    tabBarIcon: ({ focused }) => (
+                        <Ionicons
+                            name={iconName(focused, route)}
+                            size={35}
+                            color="#be3144"
+                        />
+                    ),
                     tabBarActiveTintColor: "#be3144",
                     tabBarInactiveTintColor: "gray",
                 })}
