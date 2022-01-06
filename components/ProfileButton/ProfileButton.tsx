@@ -1,5 +1,5 @@
 import React from "react";
-import { Image, View, Text, TouchableOpacity, StyleSheet } from "react-native";
+import { Image, View, Text, TouchableOpacity } from "react-native";
 import { ProfileButtonProps } from "../../interfaces/interfaces";
 import { profileButtonStyles } from "../../styles/componentStyles";
 
