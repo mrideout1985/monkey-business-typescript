@@ -32,8 +32,11 @@
                 "trailingComma": "all",
                 "endOfLine": "auto",
                 "tabWidth": 4
+                
             }
         ],
+        "class-methods-use-this": "off",
+        "no-return-assign": "off",
         "no-use-before-define": "off",
         "consistent-return": "off",
         "@typescript-eslint/no-use-before-define": ["error"],
