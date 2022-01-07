@@ -1,26 +1,34 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { SafeAreaView, SectionList } from "react-native";
 import Header from "../components/Header/Header";
 import ProfileButton from "../components/ProfileButton/ProfileButton";
-import { useGetMonkeys } from "../hooks/useGetMonkeys";
-import { MonkeyDirectoryProps } from "../interfaces/types";
+import { Monkey, MonkeyDirectoryProps, RootObject } from "../interfaces/types";
+import { monkeyData } from "../services/MonkeyService";
 import { monkeyDirectoryStyles } from "../styles/componentStyles";
 
 export default function MonkeyDirectory({
     navigation,
 }: MonkeyDirectoryProps<"MonkeyDirectory">) {
-    const result = useGetMonkeys();
-    const monkeyData = result?.monkeys ?? [];
+    const [monkeys, setMonkeys] = useState<RootObject>();
+
+    useEffect(() => {
+        monkeyData.getData().then((data) => {
+            setMonkeys(data);
+        });
+    }, [monkeys]);
+
     const data = [
         {
             title: "Monkeys",
-            data: monkeyData,
+            data: monkeys?.monkeys as Monkey[],
         },
     ];
+    const sections = monkeys ? data : [];
+
     return (
         <SafeAreaView style={monkeyDirectoryStyles.container}>
             <SectionList
-                sections={data}
+                sections={sections}
                 contentContainerStyle={{
                     justifyContent: "center",
                     alignItems: "center",
