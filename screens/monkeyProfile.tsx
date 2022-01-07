@@ -10,6 +10,7 @@ export default function MonkeyProfile({
     navigation,
 }: MonkeyPageProps<"MonkeyProfile">) {
     const { id, name, age, bananas, img } = route.params;
+
     return (
         <View style={profileStyles.container}>
             <View style={profileStyles.image}>
@@ -41,7 +42,7 @@ export default function MonkeyProfile({
                         <Text style={profileStyles.age}>, {age} </Text>
                     </Text>
                     <Text style={profileStyles.bananas}>
-                        Bananas: {bananas}{" "}
+                        Bananas: {bananas}
                     </Text>
                 </View>
                 <Text style={profileStyles.from}>

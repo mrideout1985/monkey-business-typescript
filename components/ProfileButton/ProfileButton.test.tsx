@@ -13,6 +13,8 @@ test("onPress gets called", () => {
         <ProfileButton btnText={text} onPress={mockFunction} image={text} />,
     );
     const button = getByText(text);
+
     fireEvent.press(button);
+
     expect(mockFunction).toBeCalled();
 });
