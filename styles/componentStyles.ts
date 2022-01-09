@@ -11,16 +11,27 @@ export const homeStyles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: "#be3144",
-        paddingHorizontal: 10,
+        justifyContent: "center",
+        alignItems: "center",
         paddingBottom: 10,
+        paddingHorizontal: 10,
     },
     text: {
         color: "#303841",
         fontFamily: "Poppins-Regular",
-        fontSize: 20,
+        fontSize: 16,
         textAlign: "center",
         margin: 32,
+        overflow: "hidden",
     },
+    textSmall: {
+        color: "red",
+        fontFamily: "Poppins-Regular",
+        fontSize: 16,
+        textAlign: "center",
+        margin: 40,
+    },
+
     monkey: {
         marginBottom: 15,
     },
@@ -99,8 +110,8 @@ export const profileStyles = StyleSheet.create({
     },
 });
 
-export const profileButtonStyles = StyleSheet.create({
-    buttonContainer: {
+export const profileCardStyles = StyleSheet.create({
+    container: {
         shadowColor: "#000",
         shadowOffset: {
             width: 0,
@@ -110,24 +121,21 @@ export const profileButtonStyles = StyleSheet.create({
         shadowRadius: 6.27,
         elevation: 22,
         backgroundColor: "#d3d6db",
-        marginRight: 10,
-        marginLeft: 10,
-        marginBottom: 10,
+        marginBottom: 15,
         alignItems: "center",
         justifyContent: "center",
         borderRadius: 15,
-        width: 350,
+        minWidth: 350,
         height: 350,
     },
     textContainer: {
         flex: 1,
         alignItems: "center",
         justifyContent: "center",
-        marginLeft: 10,
     },
     shadow: {
         shadowColor: "#202020",
-        shadowOffset: { width: 0, height: 0 },
+        shadowOffset: { width: 10, height: 10 },
         shadowRadius: 5,
         elevation: 10,
     },
@@ -143,5 +151,6 @@ export const profileButtonStyles = StyleSheet.create({
         color: "#2c2c2c",
         textTransform: "uppercase",
         textAlign: "center",
+        marginBottom: 20,
     },
 });

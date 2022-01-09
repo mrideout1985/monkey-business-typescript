@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { SafeAreaView, SectionList } from "react-native";
-import Header from "../components/Header/Header";
-import ProfileButton from "../components/ProfileButton/ProfileButton";
 import { Monkey, MonkeyDirectoryProps, RootObject } from "../interfaces/types";
 import { monkeyData } from "../services/MonkeyService";
 import { monkeyDirectoryStyles } from "../styles/componentStyles";
+import Header from "../components/Header/Header";
+import ProfileCard from "../components/ProfileCard/ProfileCard";
 
 export default function MonkeyDirectory({
     navigation,
@@ -30,14 +30,14 @@ export default function MonkeyDirectory({
             <SectionList
                 sections={sections}
                 contentContainerStyle={{
-                    justifyContent: "center",
                     alignItems: "center",
+                    justifyContent: "center",
                 }}
                 renderSectionHeader={({ section: { title } }) => (
                     <Header title={title} color="#d3d6db" />
                 )}
                 renderItem={({ item }) => (
-                    <ProfileButton
+                    <ProfileCard
                         onPress={() =>
                             navigation.navigate("MonkeyProfile", item)
                         }

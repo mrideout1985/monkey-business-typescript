@@ -4,9 +4,9 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { RouteProp } from "@react-navigation/native";
 import { Platform, StatusBar, View } from "react-native";
-import Home from "../screens/Home";
 import MonkeyStack from "./MonkeyStack";
 import { TabParamList } from "../interfaces/types";
+import Home from "../screens/Home";
 
 const Tabs = createBottomTabNavigator<TabParamList>();
 

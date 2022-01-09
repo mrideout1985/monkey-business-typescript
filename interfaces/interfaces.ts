@@ -1,4 +1,4 @@
-export interface ProfileButtonProps {
+export interface ProfileCardProps {
     onPress?: () => void;
     btnText: string;
     image?: string;
