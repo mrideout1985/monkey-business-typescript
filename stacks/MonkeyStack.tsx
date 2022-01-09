@@ -9,7 +9,7 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 export default function MonkeyStack() {
     return (
         <Stack.Navigator
-            defaultScreenOptions={{ animation: "simple_push" }}
+            defaultScreenOptions={{ animation: "slide_from_bottom" }}
             screenOptions={{
                 headerTitleAlign: "left",
                 headerTitleStyle: {
