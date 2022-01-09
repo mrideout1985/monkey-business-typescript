@@ -25,11 +25,6 @@ export default function Header({
             color: color || "black",
             padding: 10,
         },
-        btn: {
-            position: "absolute",
-            top: 0,
-            backgroundColor: "red",
-        },
     });
 
     return (
