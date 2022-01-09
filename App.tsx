@@ -3,7 +3,7 @@ import React from "react";
 import { useFonts } from "expo-font";
 import AppLoading from "expo-app-loading";
 import { NavigationContainer } from "@react-navigation/native";
-import { TabStack } from "./routes/TabStack";
+import { TabStack } from "./stacks/TabStack";
 
 export default function App() {
     const [fontsLoaded] = useFonts({
