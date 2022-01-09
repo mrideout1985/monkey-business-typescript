@@ -6,7 +6,7 @@ import MonkeyProfile from "../screens/MonkeyProfile";
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
-function MonkeyStack() {
+export default function MonkeyStack() {
     return (
         <Stack.Navigator
             defaultScreenOptions={{ animation: "slide_from_bottom" }}
@@ -24,5 +24,3 @@ function MonkeyStack() {
         </Stack.Navigator>
     );
 }
-
-export default MonkeyStack;
