@@ -27,7 +27,7 @@ export function TabStack(): JSX.Element {
     };
 
     return (
-        <View style={{ flex: 1 }}>
+        <>
             {isAndroid ? <StatusBar barStyle="default" /> : null}
             <Tabs.Navigator
                 screenOptions={({ route }) => ({
@@ -57,6 +57,6 @@ export function TabStack(): JSX.Element {
                     component={MonkeyStack}
                 />
             </Tabs.Navigator>
-        </View>
+        </>
     );
 }
