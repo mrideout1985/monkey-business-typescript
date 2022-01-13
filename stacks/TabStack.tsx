@@ -28,7 +28,7 @@ export function TabStack(): JSX.Element {
 
     return (
         <>
-            {isAndroid ? <StatusBar barStyle="default" /> : null}
+            {isAndroid && <StatusBar barStyle="default" />}
             <Tabs.Navigator
                 screenOptions={({ route }) => ({
                     tabBarIcon: ({ focused }) => (
